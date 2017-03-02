@@ -1,0 +1,47 @@
+/* pages/search/search.wxss */
+.searchBox{
+    display: inline-block;
+    width: 70%;
+    border: 1px #ddd solid;
+    padding-left: 4px;
+    text-align: center;
+}
+
+.btnSearch{
+    display: inline-block;
+    margin: -4rpx 0 0 4rpx;
+}
+.content{
+    width: 96%;
+    margin: 20px auto;
+    border-top: 1px #ccc solid;
+}
+.block{
+    padding: 6px 0;
+    border-bottom: 1px #ccc solid;
+    position: relative;
+}
+.block image{
+    float: left;
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+
+.block .txt text{
+    display: block;
+    text-align: left;
+    margin: 4px 0;
+    color: #666;
+    width: 500rpx;
+    overflow: hidden;
+}
+
+.block .btnShow{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -14rpx;
+    color: #09bb07;
+}

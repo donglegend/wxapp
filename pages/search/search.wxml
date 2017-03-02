@@ -1,0 +1,20 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+    <input class="searchBox" type="text" placeholder="请输入公众号ID或者名称" bindinput="bindKeyInput" value=""/>
+    <icon class="btnSearch" type="search" size="20" color="blue" bindtap="searchfn"></icon>
+    <scroll-view class="content" scroll-y="true" bindscrolltolower="lower" wx:if="{{mpList.length > 0}}">
+        <view class="block clearfix" wx:for="{{mpList}}" wx:key="{{index}}">
+            <image src="{{item.mp_avatar}}"></image>
+            <view class="txt">
+                <text>{{item.mp_name}}</text>
+                <text>{{item.mp_weixin_id}} id</text>
+                <text class="text-overflow">{{item.mp_recommend}}</text>
+            </view>
+            <text class="btnShow" data-id="{{item.mp_weixin_id}}" bindtap="goInfo">查看</text>
+        </view>
+    </scroll-view>
+    <view wx:else>
+        暂无数据!
+    </view>
+    <button style="widht: 80%;" bindtap="getMpList" wx:if="{{nextpage > 0}}">加载更多</button>
+</view>

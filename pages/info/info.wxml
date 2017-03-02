@@ -1,0 +1,50 @@
+
+<!--pages/info/info.wxml-->
+<view class="container content">
+  <view class="block clearfix">
+    <image src="{{item.mp_avatar}}"></image>
+    <view class="txt">
+      <text>{{item.mp_name}}</text>
+      <text>{{item.mp_weixin_id}} id</text>
+      <text class="text-overflow">{{item.mp_recommend}}</text>
+    </view>
+
+    <view>
+      <text class="title">性别比(女: {{item.sexPercent}}%)</text>
+      <progress percent="{{item.sexPercent}}" color="red" active stroke-width="10" />
+    </view>
+
+    <view>
+      <text class="title">粉丝Top10地域</text>
+      <view class="border region">
+        <view class="table thead">
+          <text>省份</text>
+          <text>占比</text>
+        </view>
+        <view class="table" wx:for="{{regionList}}" wx:key="index">
+            <text>{{item.province || 'xxx'}}</text>
+            <text>{{item.percent}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view>
+        <text class="title">近期公众号概况(7天)</text>
+        <view class="border recentStat">
+            <view class="table thead">
+                <text>名称</text>
+                <text>文章发布数</text>
+                <text>头条阅读均数</text>
+                <text>总阅读数</text>
+            </view>
+            <view class="table">
+                <text>{{recentStat.mp_name}}</text>
+                <text>{{recentStat.act_info.publish_num}}</text>
+                <text>{{recentStat.act_info.read_num_avg_line1}}</text>
+                <text>{{recentStat.act_info.read_num_total}}</text>
+            </view>
+        </view>
+    </view>
+
+  </view>
+</view>
